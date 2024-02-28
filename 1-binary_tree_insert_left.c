@@ -1,18 +1,17 @@
 #include "binary_trees.h"
 
 /**
- * CreateNewNode - create a new node
+ * createNewNode - create a new node
  * @value: the value to store in the new node
  *
  * Return: the created new node
  */
-binary_tree_t *CreateNewNode(int value)
+binary_tree_t *createNewNode(int value)
 {
 	binary_tree_t *node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
 
 	if (node == NULL)
 	{
-		free(node);
 		return (NULL);
 	}
 	node->n = value;
@@ -35,7 +34,7 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	{
 		return (NULL);
 	}
-	binary_tree_t *newNode = CreateNewNode(value);
+	binary_tree_t *newNode = createNewNode(value);
 
 	newNode->parent = parent;
 
