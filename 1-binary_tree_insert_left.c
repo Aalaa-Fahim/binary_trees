@@ -1,7 +1,7 @@
 #include "binary_tress.h"
 
 /**
- * binary_tree_t - create a new node
+ * newNode - create a new node
  * @value: the value to store in the new node
  *
  * Return: the created new node
@@ -13,7 +13,7 @@ binary_tree_t *newNode(int value)
 	node->value = value;
 	node->left = NULL;
 	node->right = NULL;
-	return node;
+	return (node);
 }
 
 /**
@@ -27,7 +27,7 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 {
 	if (parent == NULL)
 	{
-		return NULL;
+		return (NULL);
 	}
 	binary_tree_t *newNode = newNode(value);
 
@@ -37,5 +37,5 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	}
 	parent->left = newNode;
 
-	return newNode;
+	return (newNode);
 }
