@@ -6,11 +6,12 @@
  *
  * Return: the created new node
  */
-binary_tree_t *newNode(int value)
+binary_tree_t *CreateNewNode(int value)
 {
 	binary_tree_t *node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
 
-	node->value = value;
+	node->n = value;
+	node->parent = NULL;
 	node->left = NULL;
 	node->right = NULL;
 	return (node);
@@ -29,7 +30,8 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	{
 		return (NULL);
 	}
-	binary_tree_t *newNode = newNode(value);
+	binary_tree_t *newNode = CreateNewNode(value);
+	newNode->parent = parent;
 
 	if (parent->left != NULL)
 	{
