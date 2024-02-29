@@ -10,7 +10,7 @@ int tree_hight(const binary_tree_t *tree)
 
 	if (tree == NULL)
 	{
-		return (-1);
+		return (0);
 	}
 	left_h = tree_hight(tree->left);
 	right_h = tree_hight(tree->right);
