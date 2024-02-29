@@ -8,16 +8,20 @@
  */
 binary_tree_t *createNewNode(int value)
 {
-	binary_tree_t *node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
+	binary_tree_t *node;
+
+	node->n = value;
+	node->parent = NULL;
+	node->left = NULL;
+	node->right = NULL;
+
+	/* node = (binary_tree_t *)malloc(sizeof(binary_tree_t)); */
 
 	if (node == NULL)
 	{
 		return (NULL);
 	}
-	node->n = value;
-	node->parent = NULL;
-	node->left = NULL;
-	node->right = NULL;
+	node = (binary_tree_t *)malloc(sizeof(binary_tree_t));
 	return (node);
 }
 
@@ -54,7 +58,8 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
  */
 void freeNode(binary_tree_t *node)
 {
-	if (node == NULL) return;
+	if (node == NULL)
+		return;
 	freeNode(node->left);
 	freeNode(node->right);
 	free(node);
