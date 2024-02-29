@@ -15,4 +15,5 @@ binary_tree_delete(tree->left);
 binary_tree_delete(tree->right);
 
 free(tree);
+tree = NULL;
 }
