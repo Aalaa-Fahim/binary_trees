@@ -7,8 +7,9 @@
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
-	binary_tree_t *nodeNew = malloc(sizeof(binary_tree_t));
-
+	binary_tree_t *nodeNew;
+	
+	nodeNew = malloc(sizeof(binary_tree_t));
 	if (nodeNew == NULL)
 	{
 		free(nodeNew);
