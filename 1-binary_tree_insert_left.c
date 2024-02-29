@@ -40,9 +40,22 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 
 	if (parent->left != NULL)
 	{
+		freeNode(parent->left);
 		newNode->left = parent->left;
 	}
 	parent->left = newNode;
 
 	return (newNode);
+}
+
+/**
+ * freeNode - frees the memory allocated for the node
+ * @node: the taken node
+ */
+void freeNode(binary_tree_t *node)
+{
+	if (node == NULL) return;
+	freeNode(node->left);
+	freeNode(node->right);
+	free(node);
 }
